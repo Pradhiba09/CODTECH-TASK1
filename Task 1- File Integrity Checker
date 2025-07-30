@@ -1,0 +1,50 @@
+# FILE INTEGRITY CHECKER TOOL 🔐
+# Built for Colab – Monitors any file you upload
+
+import hashlib
+import os
+
+# STEP 1: Generate SHA-256 hash of a file
+def generate_file_hash(filepath):
+    sha256_hash = hashlib.sha256()
+    try:
+        with open(filepath, "rb") as f:
+            for byte_block in iter(lambda: f.read(4096), b""):
+                sha256_hash.update(byte_block)
+        return sha256_hash.hexdigest()
+    except FileNotFoundError:
+        return None
+
+# STEP 2: Dictionary to store original file hashes
+file_hashes = {}
+
+# STEP 3: Add file to monitoring
+def add_file_to_monitoring(filename):
+    hash_val = generate_file_hash(filename)
+    if hash_val:
+        file_hashes[filename] = hash_val
+        print(f"✅ File added for monitoring: {filename}")
+        print(f"🔒 Original Hash: {hash_val}")
+    else:
+        print(f"❌ File not found: {filename}")
+
+# STEP 4: Check if file has changed
+def check_if_file_changed(filename):
+    current_hash = generate_file_hash(filename)
+    if filename not in file_hashes:
+        print(f"⚠️ This file is not being monitored yet: {filename}")
+        return
+    print(f"📄 Checking file: {filename}")
+    print(f"🔒 Original Hash: {file_hashes[filename]}")
+    print(f"🆕 Current Hash : {current_hash}")
+
+    if current_hash == file_hashes[filename]:
+        print(f"✅ File has not been modified.")
+    else:
+        print(f"🚨 File has been MODIFIED!")
+
+from google.colab import files
+uploaded = files.upload() 
+
+add_file_to_monitoring("1.txt")  
+check_if_file_changed("1.txt") 
