@@ -38,8 +38,8 @@ If both hashes match → ✅ File is unchanged.
 If hashes do not match → ⚠️ File has been modified.
 
 OUTPUT:
-Here is a screenshot showing the output of the File Integrity Checker:
-[Output Screenshot](output.png)
+I have uploaded a screenshot of the output.Kindly check it.
+
 
 Conclusion:
 This project successfully demonstrates how file integrity can be protected using hash values. It is a useful and practical tool for detecting unauthorized file changes and is a great entry-level application in the field of cybersecurity and penetration testing.
