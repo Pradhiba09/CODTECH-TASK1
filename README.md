@@ -15,7 +15,7 @@ Objective:
 To develop a Python-based tool that ensures the integrity of files by monitoring changes using secure hashing techniques (SHA-256). The goal is to detect any unauthorized or accidental modifications made to files.
 
 Project Description:
-The File Integrity Checker is a cybersecurity tool that calculates and stores the hash (a unique digital fingerprint) of a file when it's first added for monitoring. At any later time, it can re-calculate the hash and compare it with the original hash to check if the file has been altered.
+The File Integrity Checker is a cybersecurity tool that calculates and stores the hash (a unique digital fingerprint) of a file when it's first added for monitoring. At any later time, it can re-calculate the hash and compare it with the original hash to check if the file has been altered.The file is saved as 1.txt.
 
 If the hashes match, the file is confirmed to be unchanged and safe. If the hashes differ, it means the file has been modified, potentially indicating a data breach or unauthorized tampering.
 
