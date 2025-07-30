@@ -8,6 +8,8 @@ Domain:Cyber Security & Ethical Hacking
 
 Duration:JULY 2 TO AUGUST 2
 
+Task : 01
+
 📄 Project Title:
 File Integrity Checker
 
